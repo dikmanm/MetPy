@@ -117,6 +117,9 @@ calc
       virtual_temperature
       vorticity
       wet_bulb_temperature
+      wind_components
+      wind_direction
+      wind_speed
       windchill
    
    

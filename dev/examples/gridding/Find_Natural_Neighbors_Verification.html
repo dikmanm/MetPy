@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Find Natural Neighbors Verification &mdash; MetPy 0.7</title>
+  <title>Find Natural Neighbors Verification &mdash; MetPy 0.8</title>
   
 
   
@@ -43,7 +43,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 0.7" href="../../index.html"/>
+    <link rel="top" title="MetPy 0.8" href="../../index.html"/>
         <link rel="up" title="MetPy Examples" href="../index.html"/>
         <link rel="next" title="Wind and Sea Level Pressure Interpolation" href="Wind_SLP_Interpolation.html"/>
         <link rel="prev" title="NEXRAD Level 2 File" href="../formats/NEXRAD_Level_2_File.html"/> 
@@ -81,7 +81,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>0.7</option>
+                      <option value=''>0.8</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -211,7 +211,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="find-natural-neighbors-verification">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-examples-gridding-find-natural-neighbors-verification-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="find-natural-neighbors-verification">
 <span id="sphx-glr-examples-gridding-find-natural-neighbors-verification-py"></span><h1>Find Natural Neighbors Verification<a class="headerlink" href="#find-natural-neighbors-verification" title="Permalink to this headline">¶</a></h1>
 <p>Finding natural neighbors in a triangulation</p>
 <p>A triangle is a natural neighbor of a point if that point is within a circumradius of the
@@ -241,7 +245,7 @@ circumcenter of a circumscribed circle containing the triangle.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;test &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
-<img alt="../../_images/sphx_glr_Find_Natural_Neighbors_Verification_001.png" class="align-center" src="../../_images/sphx_glr_Find_Natural_Neighbors_Verification_001.png" />
+<img alt="../../_images/sphx_glr_Find_Natural_Neighbors_Verification_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_Find_Natural_Neighbors_Verification_001.png" />
 <p>Since finding natural neighbors already calculates circumcenters and circumradii, return
 that information for later use.</p>
 <p>The key of the neighbors dictionary refers to the test point index, and the list of integers
@@ -253,7 +257,7 @@ Point 3 is at the confluence of several triangles so it has many natural neighbo
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> <span class="mi">4</span><span class="p">:</span> <span class="p">[]}</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{0: [0, 1], 1: [24, 25], 2: [16, 17, 30, 31], 3: [18, 19, 20, 21, 22, 23, 26, 27], 4: []}
 </pre></div>
 </div>
 <p>We can then use the information in tri_info later.</p>
@@ -280,9 +284,9 @@ containing that triangle.</p>
 <a href="http://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../../_images/sphx_glr_Find_Natural_Neighbors_Verification_002.png" class="align-center" src="../../_images/sphx_glr_Find_Natural_Neighbors_Verification_002.png" />
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.258 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<img alt="../../_images/sphx_glr_Find_Natural_Neighbors_Verification_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_Find_Natural_Neighbors_Verification_002.png" />
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.242 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-gridding-find-natural-neighbors-verification-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/Find_Natural_Neighbors_Verification.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Find_Natural_Neighbors_Verification.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -314,7 +318,7 @@ containing that triangle.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, MetPy Developers.
-      Last updated on May 17, 2018 at 19:42:17.
+      Last updated on Jun 28, 2018 at 00:57:58.
 
     </p>
   </div>
@@ -351,7 +355,7 @@ containing that triangle.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.7.0+262.g9879351',
+            VERSION:'0.8.0+11.g934e06c',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

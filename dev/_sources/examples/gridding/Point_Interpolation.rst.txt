@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_examples_gridding_Point_Interpolation.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_examples_gridding_Point_Interpolation.py:
 
@@ -115,7 +119,7 @@ Scipy.interpolate linear
 
 
 .. image:: /examples/gridding/images/sphx_glr_Point_Interpolation_001.png
-    :align: center
+    :class: sphx-glr-single-img
 
 
 
@@ -138,7 +142,7 @@ Natural neighbor interpolation (MetPy implementation)
 
 
 .. image:: /examples/gridding/images/sphx_glr_Point_Interpolation_002.png
-    :align: center
+    :class: sphx-glr-single-img
 
 
 
@@ -166,7 +170,7 @@ min_neighbors = 1
 
 
 .. image:: /examples/gridding/images/sphx_glr_Point_Interpolation_003.png
-    :align: center
+    :class: sphx-glr-single-img
 
 
 
@@ -191,7 +195,7 @@ min_neighbors = 3
 
 
 .. image:: /examples/gridding/images/sphx_glr_Point_Interpolation_004.png
-    :align: center
+    :class: sphx-glr-single-img
 
 
 
@@ -216,18 +220,22 @@ linear
 
 
 .. image:: /examples/gridding/images/sphx_glr_Point_Interpolation_005.png
-    :align: center
+    :class: sphx-glr-single-img
 
 
 
 
-**Total running time of the script:** ( 0 minutes  50.402 seconds)
+**Total running time of the script:** ( 1 minutes  35.327 seconds)
 
+
+.. _sphx_glr_download_examples_gridding_Point_Interpolation.py:
 
 
 .. only :: html
 
  .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download

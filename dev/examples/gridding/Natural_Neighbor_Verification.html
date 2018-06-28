@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Natural Neighbor Verification &mdash; MetPy 0.7</title>
+  <title>Natural Neighbor Verification &mdash; MetPy 0.8</title>
   
 
   
@@ -43,7 +43,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 0.7" href="../../index.html"/>
+    <link rel="top" title="MetPy 0.8" href="../../index.html"/>
         <link rel="up" title="MetPy Examples" href="../index.html"/>
         <link rel="next" title="Skew-T with Complex Layout" href="../plots/Skew-T_Layout.html"/>
         <link rel="prev" title="Inverse Distance Verification: Cressman and Barnes" href="Inverse_Distance_Verification.html"/> 
@@ -81,7 +81,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>0.7</option>
+                      <option value=''>0.8</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -211,7 +211,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="natural-neighbor-verification">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-examples-gridding-natural-neighbor-verification-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="natural-neighbor-verification">
 <span id="sphx-glr-examples-gridding-natural-neighbor-verification-py"></span><h1>Natural Neighbor Verification<a class="headerlink" href="#natural-neighbor-verification" title="Permalink to this headline">¶</a></h1>
 <p>Walks through the steps of Natural Neighbor interpolation to validate that the algorithmic
 approach taken in MetPy is correct.</p>
@@ -299,7 +303,7 @@ estimate a value using natural neighbor interpolation.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;grid 1: {:.3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">sim_gridx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sim_gridy</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
-<img alt="../../_images/sphx_glr_Natural_Neighbor_Verification_001.png" class="align-center" src="../../_images/sphx_glr_Natural_Neighbor_Verification_001.png" />
+<img alt="../../_images/sphx_glr_Natural_Neighbor_Verification_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_Natural_Neighbor_Verification_001.png" />
 <p>Using the circumcenter and circumcircle radius information from
 <code class="xref py py-func docutils literal notranslate"><span class="pre">metpy.gridding.triangles.find_natural_neighbors()</span></code>, we can visually
 examine the results to see if they are correct.</p>
@@ -337,7 +341,7 @@ examine the results to see if they are correct.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../../_images/sphx_glr_Natural_Neighbor_Verification_002.png" class="align-center" src="../../_images/sphx_glr_Natural_Neighbor_Verification_002.png" />
+<img alt="../../_images/sphx_glr_Natural_Neighbor_Verification_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_Natural_Neighbor_Verification_002.png" />
 <p>What?….the circle from triangle 8 looks pretty darn close. Why isn’t
 grid 0 included in that circle?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_t</span><span class="p">,</span> <span class="n">y_t</span> <span class="o">=</span> <span class="n">tri_info</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="s1">&#39;cc&#39;</span><span class="p">]</span>
@@ -349,8 +353,8 @@ grid 0 included in that circle?</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Distance</span> <span class="n">between</span> <span class="n">grid0</span> <span class="ow">and</span> <span class="n">Triangle</span> <span class="mi">8</span> <span class="n">circumcenter</span><span class="p">:</span> <span class="mf">25.30650398368644</span>
-<span class="n">Triangle</span> <span class="mi">8</span> <span class="n">circumradius</span><span class="p">:</span> <span class="mf">25.258767799971746</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Distance between grid0 and Triangle 8 circumcenter: 25.30650398368644
+Triangle 8 circumradius: 25.258767799971746
 </pre></div>
 </div>
 <p>Lets do a manual check of the above interpolation value for grid 0 (southernmost grid)
@@ -363,11 +367,11 @@ Grab the circumcenters and radii for natural neighbors</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circumcenters</span><span class="p">:</span>
- <span class="p">[[</span><span class="mf">36.32995951</span> <span class="mf">48.24358974</span><span class="p">]</span>
- <span class="p">[</span><span class="mf">21.</span>         <span class="mf">40.15277778</span><span class="p">]]</span>
-<span class="n">radii</span>
- <span class="p">[</span><span class="mf">24.35529419</span> <span class="mf">20.73432492</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>circumcenters:
+ [[36.32995951 48.24358974]
+ [21.         40.15277778]]
+radii
+ [24.35529419 20.73432492]
 </pre></div>
 </div>
 <p>Draw the natural neighbor triangles and their circumcenters. Also plot a <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/spatial.html#voronoi-diagrams">Voronoi diagram</a>
@@ -436,7 +440,7 @@ in the Voronoi plot (green dots), and the observations are in the polygons (blue
 <span class="n">draw_polygon_with_info</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="p">[</span><span class="n">cc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cc</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cc1</span><span class="p">,</span> <span class="n">cc2</span><span class="p">])</span>
 </pre></div>
 </div>
-<img alt="../../_images/sphx_glr_Natural_Neighbor_Verification_003.png" class="align-center" src="../../_images/sphx_glr_Natural_Neighbor_Verification_003.png" />
+<img alt="../../_images/sphx_glr_Natural_Neighbor_Verification_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_Natural_Neighbor_Verification_003.png" />
 <p>Put all of the generated polygon areas and their affiliated values in arrays.
 Calculate the total area of all of the generated polygons.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">areas</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mf">60.434</span><span class="p">,</span> <span class="mf">448.296</span><span class="p">,</span> <span class="mf">25.916</span><span class="p">,</span> <span class="mf">70.647</span><span class="p">])</span>
@@ -446,7 +450,7 @@ Calculate the total area of all of the generated polygons.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">605.2930000000001</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>605.2930000000001
 </pre></div>
 </div>
 <p>For each polygon area, calculate its percent of total area.</p>
@@ -455,7 +459,7 @@ Calculate the total area of all of the generated polygons.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">0.09984256</span> <span class="mf">0.74062644</span> <span class="mf">0.04281563</span> <span class="mf">0.11671538</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0.09984256 0.74062644 0.04281563 0.11671538]
 </pre></div>
 </div>
 <p>Multiply the percent of total area by the respective values.</p>
@@ -464,7 +468,7 @@ Calculate the total area of all of the generated polygons.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">0.00638992</span> <span class="mf">0.85616417</span> <span class="mf">0.1202691</span>  <span class="mf">0.02626096</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0.00638992 0.85616417 0.1202691  0.02626096]
 </pre></div>
 </div>
 <p>The sum of this array is the interpolation value!</p>
@@ -475,7 +479,7 @@ Calculate the total area of all of the generated polygons.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.0090841476772403</span> <span class="mf">1.009084244425604</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.0090841476772403 1.009084244425604
 </pre></div>
 </div>
 <p>The values are slightly different due to truncating the area values in
@@ -483,8 +487,8 @@ the above visual example to the 3rd decimal place.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><a href="http://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.124 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.104 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-gridding-natural-neighbor-verification-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/Natural_Neighbor_Verification.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Natural_Neighbor_Verification.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -516,7 +520,7 @@ the above visual example to the 3rd decimal place.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, MetPy Developers.
-      Last updated on May 17, 2018 at 19:42:17.
+      Last updated on Jun 28, 2018 at 00:57:58.
 
     </p>
   </div>
@@ -553,7 +557,7 @@ the above visual example to the 3rd decimal place.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.7.0+262.g9879351',
+            VERSION:'0.8.0+11.g934e06c',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

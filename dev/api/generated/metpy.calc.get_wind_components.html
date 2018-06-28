@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>get_wind_components &mdash; MetPy 0.7</title>
+  <title>get_wind_components &mdash; MetPy 0.8</title>
   
 
   
@@ -43,7 +43,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 0.7" href="../../index.html"/>
+    <link rel="top" title="MetPy 0.8" href="../../index.html"/>
         <link rel="up" title="calc" href="metpy.calc.html"/>
         <link rel="next" title="get_wind_dir" href="metpy.calc.get_wind_dir.html"/>
         <link rel="prev" title="get_perturbation" href="metpy.calc.get_perturbation.html"/> 
@@ -81,7 +81,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>0.7</option>
+                      <option value=''>0.8</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -163,10 +163,7 @@
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.get_layer.html">get_layer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.get_layer_heights.html">get_layer_heights</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.get_perturbation.html">get_perturbation</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">get_wind_components</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#examples-using-metpy-calc-get-wind-components">Examples using <code class="docutils literal notranslate"><span class="pre">metpy.calc.get_wind_components</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">get_wind_components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.get_wind_dir.html">get_wind_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.get_wind_speed.html">get_wind_speed</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.gradient.html">gradient</a></li>
@@ -237,6 +234,9 @@
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.virtual_temperature.html">virtual_temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.vorticity.html">vorticity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.wet_bulb_temperature.html">wet_bulb_temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.wind_components.html">wind_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.wind_direction.html">wind_direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.wind_speed.html">wind_speed</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metpy.calc.windchill.html">windchill</a></li>
 </ul>
 </li>
@@ -325,7 +325,7 @@
 <h1>get_wind_components<a class="headerlink" href="#get-wind-components" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="metpy.calc.get_wind_components">
-<code class="descclassname">metpy.calc.</code><code class="descname">get_wind_components</code><span class="sig-paren">(</span><em>speed</em>, <em>wdir</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/basic.html#get_wind_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.get_wind_components" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">metpy.calc.</code><code class="descname">get_wind_components</code><span class="sig-paren">(</span><em>u</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/basic.html#get_wind_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.get_wind_components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the U, V wind vector components from the speed and direction.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -334,7 +334,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>speed</strong> (<em>array_like</em>) – The wind speed (magnitude)</li>
 <li><strong>wdir</strong> (<em>array_like</em>) – The wind direction, specified as the direction from which the wind is
-blowing, with 0 being North.</li>
+blowing, with 360 degrees being North.</li>
 </ul>
 </td>
 </tr>
@@ -346,53 +346,21 @@ directions, respectively.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="metpy.calc.get_wind_speed.html#metpy.calc.get_wind_speed" title="metpy.calc.get_wind_speed"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_wind_speed()</span></code></a>, <a class="reference internal" href="metpy.calc.get_wind_dir.html#metpy.calc.get_wind_dir" title="metpy.calc.get_wind_dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_wind_dir()</span></code></a></p>
+<p class="last"><a class="reference internal" href="metpy.calc.wind_speed.html#metpy.calc.wind_speed" title="metpy.calc.wind_speed"><code class="xref py py-func docutils literal notranslate"><span class="pre">wind_speed()</span></code></a>, <a class="reference internal" href="metpy.calc.wind_direction.html#metpy.calc.wind_direction" title="metpy.calc.wind_direction"><code class="xref py py-func docutils literal notranslate"><span class="pre">wind_direction()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">metpy.units</span> <span class="k">import</span> <span class="n">units</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">metpy</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">get_wind_components</span><span class="p">(</span><span class="mf">10.</span> <span class="o">*</span> <span class="n">units</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">),</span> <span class="mf">225.</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metpy</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">wind_components</span><span class="p">(</span><span class="mf">10.</span> <span class="o">*</span> <span class="n">units</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">),</span> <span class="mf">225.</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
 <span class="go">(&lt;Quantity(7.071067811865475, &#39;meter / second&#39;)&gt;,</span>
 <span class="go"> &lt;Quantity(7.071067811865477, &#39;meter / second&#39;)&gt;)</span>
 </pre></div>
 </div>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.9.0: </span>Function has been renamed to <a class="reference internal" href="metpy.calc.wind_components.html#metpy.calc.wind_components" title="metpy.calc.wind_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wind_components</span></code></a> and will be removed from MetPy in 0.12.0.</p>
+</div>
 </dd></dl>
 
-<div class="section" id="examples-using-metpy-calc-get-wind-components">
-<h2>Examples using <code class="docutils literal notranslate"><span class="pre">metpy.calc.get_wind_components</span></code><a class="headerlink" href="#examples-using-metpy-calc-get-wind-components" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="Plot a sounding using MetPy with more advanced features."><div class="figure" id="id1">
-<img alt="../../_images/sphx_glr_Advanced_Sounding_thumb.png" src="../../_images/sphx_glr_Advanced_Sounding_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../examples/Advanced_Sounding.html#sphx-glr-examples-advanced-sounding-py"><span class="std std-ref">Advanced Sounding</span></a></span></p>
-</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Interpolate sea level pressure, as well as wind component data, to make a consistent looking an..."><div class="figure" id="id2">
-<img alt="../../_images/sphx_glr_Wind_SLP_Interpolation_thumb.png" src="../../_images/sphx_glr_Wind_SLP_Interpolation_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../examples/gridding/Wind_SLP_Interpolation.html#sphx-glr-examples-gridding-wind-slp-interpolation-py"><span class="std std-ref">Wind and Sea Level Pressure Interpolation</span></a></span></p>
-</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Combine a Skew-T and a hodograph using Matplotlib&#x27;s `GridSpec` layout capability. "><div class="figure" id="id3">
-<img alt="../../_images/sphx_glr_Skew-T_Layout_thumb.png" src="../../_images/sphx_glr_Skew-T_Layout_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../examples/plots/Skew-T_Layout.html#sphx-glr-examples-plots-skew-t-layout-py"><span class="std std-ref">Skew-T with Complex Layout</span></a></span></p>
-</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Layout a Skew-T plot with a hodograph inset into the plot. "><div class="figure" id="id4">
-<img alt="../../_images/sphx_glr_Hodograph_Inset_thumb.png" src="../../_images/sphx_glr_Hodograph_Inset_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../examples/plots/Hodograph_Inset.html#sphx-glr-examples-plots-hodograph-inset-py"><span class="std std-ref">Hodograph Inset</span></a></span></p>
-</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Use MetPy as straightforward as possible to make a Skew-T LogP plot. "><div class="figure" id="id5">
-<img alt="../../_images/sphx_glr_Simple_Sounding_thumb.png" src="../../_images/sphx_glr_Simple_Sounding_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../examples/plots/Simple_Sounding.html#sphx-glr-examples-plots-simple-sounding-py"><span class="std std-ref">Simple Sounding</span></a></span></p>
-</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Make a station plot, complete with sky cover and weather symbols."><div class="figure" id="id6">
-<img alt="../../_images/sphx_glr_Station_Plot_thumb.png" src="../../_images/sphx_glr_Station_Plot_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../examples/plots/Station_Plot.html#sphx-glr-examples-plots-station-plot-py"><span class="std std-ref">Station Plot</span></a></span></p>
-</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Make a station plot, complete with sky cover and weather symbols, using a station plot layout b..."><div class="figure" id="id7">
-<img alt="../../_images/sphx_glr_Station_Plot_with_Layout_thumb.png" src="../../_images/sphx_glr_Station_Plot_with_Layout_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../examples/plots/Station_Plot_with_Layout.html#sphx-glr-examples-plots-station-plot-with-layout-py"><span class="std std-ref">Station Plot with Layout</span></a></span></p>
-</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Upper air analysis is a staple of many synoptic and mesoscale analysis problems. In this tutori..."><div class="figure" id="id8">
-<img alt="../../_images/sphx_glr_upperair_soundings_thumb.png" src="../../_images/sphx_glr_upperair_soundings_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/upperair_soundings.html#sphx-glr-tutorials-upperair-soundings-py"><span class="std std-ref">Upper Air Sounding Tutorial</span></a></span></p>
-</div>
-</div><div style='clear:both'></div></div>
-</div>
+<div style='clear:both'></div></div>
 
 
            </div>
@@ -417,7 +385,7 @@ directions, respectively.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, MetPy Developers.
-      Last updated on May 17, 2018 at 19:42:17.
+      Last updated on Jun 28, 2018 at 00:57:58.
 
     </p>
   </div>
@@ -454,7 +422,7 @@ directions, respectively.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.7.0+262.g9879351',
+            VERSION:'0.8.0+11.g934e06c',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
